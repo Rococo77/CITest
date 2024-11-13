@@ -115,14 +115,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-dist-
 
-      - name: Build project
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist/
 
   docker-build:
     runs-on: ubuntu-latest
