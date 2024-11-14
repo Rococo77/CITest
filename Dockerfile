@@ -19,3 +19,4 @@ EXPOSE 3000
 
 # Étape 7 : Définir la commande pour démarrer l'application
 CMD ["npm", "start"]
+
