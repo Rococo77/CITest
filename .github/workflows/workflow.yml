@@ -146,8 +146,8 @@ jobs:
       - name: Push Docker image to GitHub Container Registry
         run: |
           echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker tag my-app-image:latest ghcr.io/${{ env.REPO_NAME }}/demo:latest
-          docker push ghcr.io/${{ env.REPO_NAME }}/demo:latest
+          docker tag my-app-image:latest ghcr.io/${{ env.REPO_NAME }}/my-app-image:latest
+          docker push ghcr.io/${{ env.REPO_NAME }}/my-app-image:latest
   
   
 
