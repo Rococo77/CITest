@@ -25,8 +25,9 @@
   },
   "release-it": {
     "$schema": "https://unpkg.com/release-it/schema/release-it.json",
-    "gitlab": {
-      "release": true
+    "github": {
+      "release": true,
+      "tokenRef": "GH_TOKEN"
     },
     "git": {
       "commitMessage": "chore: release v${version}"

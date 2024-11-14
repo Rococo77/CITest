@@ -182,4 +182,4 @@ jobs:
         - name: Release
           env:
             GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          run: npx --yes release-it --ci
+          run: npm run release
