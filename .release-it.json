@@ -1,0 +1,12 @@
+{
+  "git": {
+    "requireCleanWorkingDir": true,
+    "commit": true,
+    "tag": true,
+    "push": true
+  },
+  "github": {
+    "release": true,
+    "tokenRef": "GH_TOKEN"
+  }
+}

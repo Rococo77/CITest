@@ -162,23 +162,24 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+        - name: Checkout code
+          uses: actions/checkout@v3
 
-      - name: Cache npm global for release
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: release-npm-${{ hashFiles('package-lock.json') }}
+        - name: Cache npm global for release
+          uses: actions/cache@v3
+          with:
+            path: ~/.npm
+            key: release-npm-${{ hashFiles('package-lock.json') }}
 
-      - name: Configure Git
-        run: |
-          git config user.email "${{ secrets.GIT_USER_EMAIL }}"
-          git config user.name "${{ secrets.GIT_USER_NAME }}"
+        - name: Configure Git
+          run: |
+            git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+            git config user.name "${{ secrets.GIT_USER_NAME }}"
 
-      - name: Pull latest changes
-        run: git pull origin main --rebase
+        - name: Pull latest changes
+          run: git pull origin main --rebase
 
-      - name: Release
-        run: npx --yes release-it --ci
-
+        - name: Release
+          env:
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          run: npx --yes release-it --ci
